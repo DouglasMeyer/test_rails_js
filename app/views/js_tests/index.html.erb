@@ -1,0 +1,11 @@
+<html>
+<head>
+</head>
+<body>
+  <ul>
+    <% tests.each do |test| %>
+      <li><%= link_to test, main_app.js_test_path(test) %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
