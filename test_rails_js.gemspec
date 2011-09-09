@@ -7,11 +7,11 @@ require "test_rails_js/version"
 Gem::Specification.new do |s|
   s.name        = "test_rails_js"
   s.version     = TestRailsJs::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of TestRailsJs."
-  s.description = "TODO: Description of TestRailsJs."
+  s.authors     = ["Douglas Meyer"]
+  s.email       = ["Douglas.Meyer@Centro.net"]
+  s.homepage    = "https://github.com/DouglasMeyer/test_rails_js"
+  s.summary     = "Test your rails JS in-browser."
+  s.description = "Test your rails JS in-browser."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
