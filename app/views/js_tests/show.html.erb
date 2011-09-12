@@ -1,8 +1,15 @@
 <html>
 <head>
+  <title><%= test %> - Test Rails JS</title>
+  <% global_assets.stylesheets.each do |asset| %>
+    <%= stylesheet_link_tag asset %>
+  <% end %>
   <%= stylesheet_link_tag test %>
 </head>
 <body>
+  <% global_assets.javascripts.each do |asset| %>
+    <%= javascript_include_tag asset %>
+  <% end %>
   <%= javascript_include_tag test %>
 </body>
 </html>
