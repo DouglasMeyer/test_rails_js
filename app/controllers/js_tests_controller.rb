@@ -15,7 +15,8 @@ private
         Dir[path + "/*_tests.js"] +
         Dir[path + "/tests/**/*.js"]
       ).map{ |test|
-        Pathname(test).relative_path_from(asset_path).sub_ext('').to_s
+        { :asset => Pathname(test).relative_path_from(asset_path).sub_ext('').to_s,
+          :path => Pathname(test).relative_path_from(Rails.root) }
       }
     }
   end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    test_rails_js (0.0.1)
+    test_rails_js (0.0.2)
       rails (~> 3.1.0)
 
 GEM

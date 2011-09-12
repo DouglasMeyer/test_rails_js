@@ -1,12 +1,16 @@
 <html>
 <head>
   <title>Test Rails JS</title>
+  <style>
+    body { line-height: 1.2; }
+    dl, dt, dd { margin: 0; padding: 0; }
+    body > dd > dl { margin-bottom: 1em; }
+    dl > dd { padding-left: 1em; }
+  </style>
 </head>
 <body>
-  <ul>
-    <% tests.each do |test| %>
-      <li><%= link_to test, main_app.js_test_path(test) %></li>
-    <% end %>
-  </ul>
+  <% tests_by_path.each do |path, tests| %>
+    <%= render :partial => 'tests', :locals => { :tests => tests } %>
+  <% end %>
 </body>
 </html>

@@ -1,0 +1,12 @@
+<% tests.each do |path, tests| %>
+  <% if tests.is_a? Hash %>
+    <dd>
+      <dl>
+        <dt><%= path %></dt>
+        <%= render :partial => 'tests', :locals => { :tests => tests } %>
+      </dl>
+    </dd>
+  <% else %>
+    <dd><%= link_to path, main_app.js_test_path(tests) %></dd>
+  <% end %>
+<% end %>
