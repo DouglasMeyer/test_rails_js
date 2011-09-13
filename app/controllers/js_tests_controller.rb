@@ -9,16 +9,13 @@ class JsTestsController < ActionController::Base
 
 private
   def tests
-    @tests ||= Rails.application.config.assets.paths.inject([]){ |tests, path|
+    @tests ||= TestRailsJs.tests do |tests, path|
       asset_path = Pathname(path)
-      tests + (
-        Dir[path + "/*_tests.js"] +
-        Dir[path + "/tests/**/*.js"]
-      ).map{ |test|
+      tests.map do |test|
         { :asset => Pathname(test).relative_path_from(asset_path).sub_ext('').to_s,
           :path => Pathname(test).relative_path_from(Rails.root) }
-      }
-    }
+      end
+    end
   end
 
   def test
